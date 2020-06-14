@@ -1,6 +1,16 @@
 name: Activate Unity
 on: [push]
 jobs:
+  requestActivation:
+    name: Request activation ✔
+    runs-on: ubuntu-latest
+    steps:
+      - name: Activate Unity
+        uses: webbertakken/unity-activate@v1.2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          unityVersion: 2019.3.7f1
   build:
     name: Build my project ✨
     runs-on: ubuntu-latest
@@ -22,7 +32,7 @@ jobs:
       - name: Build project
         uses: webbertakken/unity-builder@v0.10
         with:
-          unityVersion: 2019.2.11f1
+          unityVersion: 2019.3.7f1
           targetPlatform: WebGL
 
       # Output
