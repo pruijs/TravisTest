@@ -6,6 +6,7 @@ jobs:
     name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
+
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -18,13 +19,20 @@ jobs:
           path: Library
           key: Library
 
+      # Activate
+      - name: Activate Unity
+        uses: webbertakken/unity-activate@v1.2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          unityVersion: 2019.3.7f1
+
       # Build
       - name: Build project
         uses: webbertakken/unity-builder@v0.10
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: .
           unityVersion: 2019.3.7f1
           targetPlatform: WebGL
       # Output
