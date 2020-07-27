@@ -35,8 +35,17 @@ jobs:
         with:
           unityVersion: 2019.3.7f1
           targetPlatform: WebGL
+          
       # Output
       - uses: actions/upload-artifact@v1
         with:
           name: Build
           path: build
+
+      # GitHub Pages
+      - name: deploy docs
+        uses: ./build
+        with:
+          username: ${{ secrets.PAGES_USERNAME }}
+          password: ${{ secrets.PAGES_PASSWORD }}
+          remote_url: https://github.com/appleboy/gh-pages-action.git
