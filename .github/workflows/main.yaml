@@ -44,7 +44,7 @@ jobs:
 
       # GitHub Pages
       - name: deploy docs
-        uses: ./build
+        uses: appleboy/gh-pages-action@v0.0.2
         with:
           username: ${{ secrets.PAGES_USERNAME }}
           password: ${{ secrets.PAGES_PASSWORD }}
