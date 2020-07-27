@@ -48,4 +48,4 @@ jobs:
         with:
           username: ${{ secrets.PAGES_USERNAME }}
           password: ${{ secrets.PAGES_PASSWORD }}
-          remote_url: https://github.com/appleboy/gh-pages-action.git
+          remote_url: https://github.com/pruijs/TravisTestPages.git
