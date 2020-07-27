@@ -48,4 +48,5 @@ jobs:
         with:
           username: ${{ secrets.PAGES_USERNAME }}
           password: ${{ secrets.PAGES_PASSWORD }}
+          pages_directory: build
           remote_url: https://github.com/pruijs/TravisTestPages.git
