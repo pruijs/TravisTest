@@ -43,7 +43,7 @@ jobs:
           path: build
 
       # GitHub Pages
-      - name: deploy docs
+      - name: deploy to pages
         uses: appleboy/gh-pages-action@v0.0.2
         with:
           username: ${{ secrets.PAGES_USERNAME }}
